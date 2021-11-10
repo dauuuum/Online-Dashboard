@@ -5,6 +5,7 @@ def create_app():
   app = Flask(__name__)
   app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://fixvzxjd:Wxh0m3L_bopzUCp79LukrFMQ4JLaupgN@rosie.db.elephantsql.com/fixvzxjd"
   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+  app.secret_key = "secret_key"
 
   db.init_app(app)
   migrate.init_app(app, db)
